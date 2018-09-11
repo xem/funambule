@@ -1,0 +1,81 @@
+﻿<style>
+@keyframes intro {
+
+  0% { transform: rotateZ(50deg) translateX(-70%) translateY(-83%) translateZ(350vmin) rotateX(-2deg) }
+  70% { transform: translateX(-70%) translateY(-113%) translateZ(44vmin) rotateX(0deg); }
+  100% { transform: rotateX(60deg) translateX(-70%) translateY(121%) translateZ(36vmin); }
+}
+
+
+* { margin: 0; box-sizing: border-box; }
+.perspective { perspective: 60vmin; margin: 50vh 25vw; }
+#left, #right { width: 50vw; height: 100vh; position: absolute; overflow: hidden; }
+#left { left: 0; }
+#right { right: 0 }
+.scene { transform-style: preserve-3d; position: fixed; width: 30vmin; height: 20vmin; transform: rotateX(60deg) translateX(-70%) translateY(121%) translateZ(36vmin); animation: intro 5s; }
+.cube { transform-style: preserve-3d; position: fixed; top: 0; left: 0; }
+.cube .face { border: 1px solid #555; width: 20vmin; height: 20vmin; position: fixed; background: linear-gradient(transparent, transparent 95%, #666 95%), linear-gradient(90deg, transparent, transparent 90%, #555 90%), #888; background-size: 100vmin 100vmin, .5vmin .5vmin; }
+.cube .face.top { background: #888 }
+.cube .face.front { height: 300vmin; transform: rotateX(-90deg); transform-origin: 0 0; }
+.cube .face.back { height: 300vmin; transform: rotateX(-90deg) translateZ(20vmin); transform-origin: 0 0;  }
+.cube .face.right { height: 300vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-20vmin) translateZ(20vmin); }
+.cube .face.left { height: 300vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-20vmin) }
+
+.wire { width: 2px; height: 10.1vmin; background: #000; transform: translateX(20vmin) translateY(20vmin); }
+
+.character { width: 2.2vmin; height: 2vmin; background: url(character.png) no-repeat; background-size: 100% 100%; transform: translateX(20vmin) translateY(19vmin) rotateX(-80deg); transform-origin: bottom center; }
+</style>
+
+<div id="left">
+
+  <div class="perspective">
+    <div class="scene">
+      <div class="cube" style="transform: translateX(2px)">
+        <p class="face top">
+        <p class="face left">
+        <p class="face right">
+        <p class="face front">
+        <p class="face back">
+      </div>
+      
+      <div class="cube" style="transform: translateX(20vmin) translateY(30vmin)">
+        <p class="face top">
+        <p class="face left">
+        <p class="face right">
+        <p class="face front">
+        <p class="face back">
+      </div>
+      
+      <div class="wire"></div>
+      <div class="character"></div>
+      
+    </div>
+  </div>
+</div>
+
+<div id="right">
+
+  <div class="perspective">
+    <div class="scene">
+      <div class="cube" style="transform: translateX(1px)">
+        <p class="face top">
+        <p class="face left">
+        <p class="face right">
+        <p class="face front">
+        <p class="face back">
+      </div>
+      
+      <div class="cube" style="transform: translateX(20vmin) translateY(30vmin)">
+        <p class="face top">
+        <p class="face left">
+        <p class="face right">
+        <p class="face front">
+        <p class="face back">
+      </div>
+      
+      <div class="wire"></div>
+      <div class="character"></div>
+      
+    </div>
+  </div>
+</div>
