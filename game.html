@@ -65,7 +65,6 @@
   <div class="perspective">
     <div class="scene">
       <div class="cube" style="transform: translateX(1px)">
-        <p class="face left">
         <p class="face right">
         <p class="face front">
         <p class="face back">
@@ -74,7 +73,6 @@
       
       <div class="cube" style="transform: translateX(25vmin) translateY(50vmin)">
         <p class="face left">
-        <p class="face right">
         <p class="face front">
         <p class="face back">
         <p class="face top">
@@ -102,6 +100,7 @@ onload = function(){
   setTimeout(function(){
     for(i = 0; i < 2; i++){
       scene[i].classList.add("intro");
+      scene[i].style.transition = "all 10s linear";
     }
   }, 100);
 
@@ -109,7 +108,6 @@ onload = function(){
 
     for(i = 0; i < 2; i++){
     
-      scene[i].style.transition = "all 10s linear";
       scene[i].style.transform = "rotateX(14deg) translateX(-18vmin) translateY(-13vmin) translateZ(39vmin)";
     
       character[i].style.transition = "all 10s linear";
