@@ -17,7 +17,8 @@
 #left, #right { width: 50vw; height: 100vh; position: absolute; overflow: hidden; }
 #left { left: 0; }
 #right { right: 0 }
-.scene { position: fixed; width: 30vmin; height: 20vmin; transform: rotateX(85deg) translateX(-27vmin) translateY(-1vmin) translateZ(7vmin); animation: intro 10s; }
+.scene { position: fixed; width: 30vmin; height: 20vmin; transform: rotateX(85deg) translateX(-27vmin) translateY(-1vmin) translateZ(7vmin); }
+.scene.intro { animation: intro 10s };
 .cube { transform-style: preserve-3d; position: fixed; top: 0; left: 0; }
 .cube .face { border: 1px solid #555; width: 25vmin; height: 25vmin; position: fixed; top: 0; left: 0; background: linear-gradient(transparent, transparent 95%, #666 95%), linear-gradient(90deg, #888, #888 90%, #555 90%); background-size: 90vmin 90vmin, 1vmin 1vmin; }
 .cube .face.top { background: #888 }
@@ -93,19 +94,30 @@ $ = function(n){
   return document.querySelectorAll(n);
 }
 
-
-setTimeout(function(){
-
-scene = $(".scene");
-character = $(".character");
-for(i = 0; i < 2; i++){
-  scene[i].style.transition = "all 10s linear";
-  scene[i].style.transform = "rotateX(14deg) translateX(-18vmin) translateY(-13vmin) translateZ(39vmin)";
+onload = function(){
   
-  character[i].style.transition = "all 10s linear";
-  character[i].style.transform = "translateX(23vmin) translateY(18vmin) rotateX(-75deg)";
+  scene = $(".scene");
+  character = $(".character");
+  
+  for(i = 0; i < 2; i++){
+    
+      scene[i].classList.add("intro");
+    
+  }
+
+  setTimeout(function(){
+
+    for(i = 0; i < 2; i++){
+    
+      scene[i].style.transition = "all 10s linear";
+      scene[i].style.transform = "rotateX(14deg) translateX(-18vmin) translateY(-13vmin) translateZ(39vmin)";
+    
+      character[i].style.transition = "all 10s linear";
+      character[i].style.transform = "translateX(23vmin) translateY(18vmin) rotateX(-75deg)";
+    }
+  }, 10500);
+
 }
 
-}, 10500);
 
 </script>
