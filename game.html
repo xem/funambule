@@ -29,8 +29,8 @@
 
 .wire { position: fixed; top: 0; left: 0; width: .5vmin; height: 25.1vmin; background: #ccc; transform: translateX(25vmin) translateY(25vmin); }
 
-.character { position: fixed; top: 0; left: 0; transform: translateX(23.5vmin) translateY(45vmin) rotateX(-75deg); transform-origin: bottom center; }
-.character_inner { width: 3vmin; height: 6vmin; background: url(character.png) no-repeat; background-size: 100% 100%; animation: wiggle .5s infinite alternate; }
+.character { position: fixed; top: 0; left: 0; transform: translateX(24vmin) translateY(47vmin) rotateX(-75deg); transform-origin: bottom center; }
+.character_inner { width: 2vmin; height: 4vmin; background: url(character.png) no-repeat; background-size: 100% 100%; animation: wiggle .5s infinite alternate; }
 </style>
 
 <div id="left">
@@ -100,7 +100,7 @@ onload = function(){
   setTimeout(function(){
     for(i = 0; i < 2; i++){
       scene[i].classList.add("intro");
-      scene[i].style.transition = "all 10s linear";
+      scene[i].style.transition = "all 100s linear";
     }
   }, 100);
 
@@ -110,8 +110,8 @@ onload = function(){
     
       scene[i].style.transform = "rotateX(14deg) translateX(-18vmin) translateY(-13vmin) translateZ(39vmin)";
     
-      character[i].style.transition = "all 10s linear";
-      character[i].style.transform = "translateX(23vmin) translateY(18vmin) rotateX(-75deg)";
+      character[i].style.transition = "all 100s linear";
+      character[i].style.transform = "translateX(23.9vmin) translateY(20vmin) rotateX(-75deg)";
     }
   }, 10500);
 
