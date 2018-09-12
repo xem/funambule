@@ -6,6 +6,11 @@
   100% { transform: rotateX(60deg) translateX(-70%) translateY(121%) translateZ(36vmin); }
 }
 
+@keyframes wiggle {
+  0% { transform: rotateY(90deg); }
+  100% { transform: rotateY(-90deg); }
+}
+
 
 * { margin: 0; box-sizing: border-box; }
 .perspective { perspective: 60vmin; margin: 50vh 25vw; }
@@ -21,9 +26,10 @@
 .cube .face.right { height: 300vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-20vmin) translateZ(20vmin); }
 .cube .face.left { height: 300vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-20vmin) }
 
-.wire { width: 2px; height: 10.1vmin; background: #000; transform: translateX(20vmin) translateY(20vmin); }
+.wire { width: 2px; height: 10.1vmin; background: #ccc; transform: translateX(20vmin) translateY(20vmin); }
 
-.character { width: 2.2vmin; height: 2vmin; background: url(character.png) no-repeat; background-size: 100% 100%; transform: translateX(20vmin) translateY(19vmin) rotateX(-80deg); transform-origin: bottom center; }
+.character { transform: translateX(19.7vmin) translateY(19vmin) rotateX(-80deg); transform-origin: bottom center; }
+.character_inner { width: .9vmin; height: 2vmin; background: url(character.png) no-repeat; background-size: 100% 100%; animation: wiggle 2s; }
 </style>
 
 <div id="left">
@@ -47,7 +53,9 @@
       </div>
       
       <div class="wire"></div>
-      <div class="character"></div>
+      <div class="character">
+        <div class="character_inner"></div>
+      </div>
       
     </div>
   </div>
@@ -74,8 +82,32 @@
       </div>
       
       <div class="wire"></div>
-      <div class="character"></div>
+      <div class="character">
+        <div class="character_inner"></div>
+      </div>
       
     </div>
   </div>
 </div>
+
+<script>
+$ = function(n){
+  return document.querySelectorAll(n);
+}
+
+
+setTimeout(function(){
+
+scene = $(".scene");
+character = $(".character");
+for(i = 0; i < 2; i++){
+  scene[i].style.transition = "all 100s linear";
+  scene[i].style.transform = "rotateX(17deg) translateX(-64%) translateY(-12%) translateZ(56vmin)";
+  
+  character[i].style.transition = "all 100s linear";
+  character[i].style.transform = "translateX(19vmin) translateY(7vmin) rotateX(-75deg)";
+}
+
+}, 5500);
+
+</script>
