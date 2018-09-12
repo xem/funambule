@@ -1,8 +1,8 @@
 ﻿<style>
 @keyframes intro {
-  0% { transform: translateY(-520vmin) translateZ(882vmin) rotateX(20deg); }
-  70% { transform: rotateX(29deg) translateX(-104vmin) translateY(-174vmin) translateZ(-2vmin); }
-  100% { transform: rotateX(85deg) translateX(-104vmin) translateY(-147vmin) translateZ(7vmin); }
+  0% { transform: rotateX(0deg) translateY(-89vmin) translateZ(466vmin) }
+  70% { transform: rotateX(10deg) translateX(-59vmin) translateY(-90vmin) translateZ(3vmin); }
+  100% { transform: rotateX(85deg) translateX(-54vmin) translateY(-65vmin) translateZ(7vmin); }
 }
 
 @keyframes wiggle {
@@ -17,18 +17,18 @@
 #left, #right { width: 50vw; height: 100vh; position: absolute; overflow: hidden; }
 #left { left: 0; }
 #right { right: 0 }
-.scene { position: fixed; width: 30vmin; height: 20vmin; transform: rotateX(85deg) translateX(-104vmin) translateY(-147vmin) translateZ(7vmin); animation: intro 5s; }
+.scene { position: fixed; width: 30vmin; height: 20vmin; transform: rotateX(85deg) translateX(-54vmin) translateY(-65vmin) translateZ(7vmin); animation: intro 5s; }
 .cube { transform-style: preserve-3d; position: fixed; top: 0; left: 0; }
-.cube .face { border: 1px solid #555; width: 100vmin; height: 100vmin; position: fixed; top: 0; left: 0; background: linear-gradient(transparent, transparent 95%, #666 95%), linear-gradient(90deg, transparent, transparent 90%, #555 90%), #888; background-size: 300vmin 300vmin, 5vmin 1000vmin; }
+.cube .face { border: 1px solid #555; width: 50vmin; height: 50vmin; position: fixed; top: 0; left: 0; background: linear-gradient(transparent, transparent 95%, #666 95%), linear-gradient(90deg, transparent, transparent 90%, #555 90%), #888; background-size: 170vmin 170vmin, 2vmin 100vmin; }
 .cube .face.top { background: #888 }
-.cube .face.front { height: 1000vmin; transform: rotateX(-90deg); transform-origin: 0 0; }
-.cube .face.back { height: 1000vmin; transform: rotateX(-90deg) translateZ(100vmin); transform-origin: 0 0;  }
-.cube .face.right { height: 1000vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-100vmin) translateZ(100vmin); }
-.cube .face.left { height: 1000vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-100vmin) }
+.cube .face.front { height: 500vmin; transform: rotateX(-90deg); transform-origin: 0 0; }
+.cube .face.back { height: 500vmin; transform: rotateX(-90deg) translateZ(50vmin); transform-origin: 0 0;  }
+.cube .face.right { height: 500vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-50vmin) translateZ(50vmin); }
+.cube .face.left { height: 500vmin; transform-origin: 0 0; transform: rotateX(-90deg) rotateY(90deg) translateX(-50vmin) }
 
-.wire { position: fixed; top: 0; left: 0; width: .5vmin; height: 100.1vmin; background: #ccc; transform: translateX(100vmin) translateY(100vmin); }
+.wire { position: fixed; top: 0; left: 0; width: .5vmin; height: 50.1vmin; background: #ccc; transform: translateX(50vmin) translateY(50vmin); }
 
-.character { position: fixed; top: 0; left: 0; transform: translateX(97.5vmin) translateY(192vmin) rotateX(-75deg); transform-origin: bottom center; }
+.character { position: fixed; top: 0; left: 0; transform: translateX(47.5vmin) translateY(98vmin) rotateX(-75deg); transform-origin: bottom center; }
 .character_inner { width: 6vmin; height: 10vmin; background: url(character.png) no-repeat; background-size: 100% 100%; animation: wiggle .5s infinite alternate; }
 </style>
 
@@ -44,7 +44,7 @@
         <p class="face top">
       </div>
       
-      <div class="cube" style="transform: translateX(100vmin) translateY(200vmin)">
+      <div class="cube" style="transform: translateX(50vmin) translateY(100vmin)">
         <p class="face left">
         <p class="face right">
         <p class="face front">
@@ -73,7 +73,7 @@
         <p class="face top">
       </div>
       
-      <div class="cube" style="transform: translateX(100vmin) translateY(200vmin)">
+      <div class="cube" style="transform: translateX(50vmin) translateY(100vmin)">
         <p class="face left">
         <p class="face right">
         <p class="face front">
@@ -102,10 +102,10 @@ scene = $(".scene");
 character = $(".character");
 for(i = 0; i < 2; i++){
   scene[i].style.transition = "all 10s linear";
-  scene[i].style.transform = "rotateX(32deg) translateX(-91vmin) translateY(-75vmin) translateZ(24vmin)";
+  scene[i].style.transform = "rotateX(32deg) translateX(-43vmin) translateY(-25vmin) translateZ(35vmin)";
   
   character[i].style.transition = "all 10s linear";
-  character[i].style.transform = "translateX(96.5vmin) translateY(88vmin) rotateX(-70deg)";
+  character[i].style.transform = "translateX(47vmin) translateY(38vmin) rotateX(-75deg)";
 }
 
 }, 5500);
