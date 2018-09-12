@@ -1,6 +1,6 @@
 ﻿<style>
 @keyframes intro {
-  0% { transform: rotateX(0deg) translateY(-89vmin) translateZ(466vmin) }
+  0% { transform: rotateX(0deg) translateY(-89vmin) translateZ(500vmin) }
   70% { transform: rotateX(10deg) translateX(-59vmin) translateY(-90vmin) translateZ(3vmin); }
   100% { transform: rotateX(85deg) translateX(-54vmin) translateY(-65vmin) translateZ(7vmin); }
 }
@@ -17,9 +17,9 @@
 #left, #right { width: 50vw; height: 100vh; position: absolute; overflow: hidden; }
 #left { left: 0; }
 #right { right: 0 }
-.scene { position: fixed; width: 30vmin; height: 20vmin; transform: rotateX(85deg) translateX(-54vmin) translateY(-65vmin) translateZ(7vmin); animation: intro 5s; }
+.scene { position: fixed; width: 30vmin; height: 20vmin; transform: rotateX(85deg) translateX(-54vmin) translateY(-65vmin) translateZ(7vmin); animation: intro 20s; }
 .cube { transform-style: preserve-3d; position: fixed; top: 0; left: 0; }
-.cube .face { border: 1px solid #555; width: 50vmin; height: 50vmin; position: fixed; top: 0; left: 0; background: linear-gradient(transparent, transparent 95%, #666 95%), linear-gradient(90deg, transparent, transparent 90%, #555 90%), #888; background-size: 170vmin 170vmin, 2vmin 100vmin; }
+.cube .face { border: 1px solid #555; width: 50vmin; height: 50vmin; position: fixed; top: 0; left: 0; background: linear-gradient(transparent, transparent 95%, #666 95%), linear-gradient(90deg, #888, #888 90%, #555 90%); background-size: 170vmin 170vmin, 2vmin 100vmin; }
 .cube .face.top { background: #888 }
 .cube .face.front { height: 500vmin; transform: rotateX(-90deg); transform-origin: 0 0; }
 .cube .face.back { height: 500vmin; transform: rotateX(-90deg) translateZ(50vmin); transform-origin: 0 0;  }
@@ -101,13 +101,13 @@ setTimeout(function(){
 scene = $(".scene");
 character = $(".character");
 for(i = 0; i < 2; i++){
-  scene[i].style.transition = "all 10s linear";
+  scene[i].style.transition = "all 50s linear";
   scene[i].style.transform = "rotateX(32deg) translateX(-43vmin) translateY(-25vmin) translateZ(35vmin)";
   
-  character[i].style.transition = "all 10s linear";
+  character[i].style.transition = "all 50s linear";
   character[i].style.transform = "translateX(47vmin) translateY(38vmin) rotateX(-75deg)";
 }
 
-}, 5500);
+}, 20500);
 
 </script>
