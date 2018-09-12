@@ -102,7 +102,7 @@ onload = function(){
   
   setTimeout(function(){
     for(i = 0; i < 2; i++){
-      scene[i].classList.add("intro");
+      //scene[i].classList.add("intro");
       scene[i].style.transition = "all 100s linear";
     }
   }, 100);
@@ -121,6 +121,7 @@ onload = function(){
 }
 
 ondeviceorientation = function(e){
+  character_rotation.children[0].innerHTML = "<h1>" + e.beta;
   character_rotation.style.transform = "rotateZ(" + e.beta / 5 + "deg)";
 }
 
