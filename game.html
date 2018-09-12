@@ -99,11 +99,11 @@ onload = function(){
   scene = $(".scene");
   character = $(".character");
   
-  for(i = 0; i < 2; i++){
-    
+  setTimeout(function(){
+    for(i = 0; i < 2; i++){
       scene[i].classList.add("intro");
-    
-  }
+    }
+  }, 100);
 
   setTimeout(function(){
 
